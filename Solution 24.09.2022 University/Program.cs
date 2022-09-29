@@ -26,16 +26,64 @@ namespace Solution_24._09._2022_University
             }
             Console.WriteLine("Для продолжения нажмите enter");
             Console.ReadKey();
+            Console.Clear();
 
             Console.WriteLine("Задание 2 \nПрограмма выводит в консоль таблицу умножения на число N\nВведите число N");
             double n = double.Parse(Console.ReadLine());
             Console.WriteLine("Таблица умножения на число " + n);
             for (int i = 1; i <= 9; i++)
             {
-                Console.WriteLine(n * i);
+                Console.WriteLine(i +" * " + n + " = " + (n * i));
             }
             Console.WriteLine("Для продолжения нажмите enter");
             Console.ReadKey();
+            Console.Clear();
+
+            Console.WriteLine("Задание 3\nПрограмма принимает число выводит информацию о том делиться ли число на некоторые числа\nВведите число");
+            double chisl = double.Parse(Console.ReadLine());
+            if (chisl % 3 == 0 && chisl % 5 == 0)
+            {
+                Console.WriteLine("БэнгБум");
+            }
+            else if ( chisl % 3 == 0)
+            {
+                Console.WriteLine("Бэнг");
+            }
+            else if (chisl % 5 == 0)
+            {
+                Console.WriteLine("Бум");
+            }
+            else
+            {
+                Console.WriteLine("Мимо");
+            }
+            Console.WriteLine("Для продолжения нажмите enter");
+            Console.ReadKey();
+            Console.Clear();
+
+            Console.WriteLine("Задание №4\nПрограмма выполняет проверку на caps\nВведите строку");
+            string str = Console.ReadLine();
+            Console.WriteLine(str.ToUpper() == str);
+            Console.WriteLine("Для продолжения нажмите enter");
+            Console.ReadKey();
+            Console.Clear();
+
+            Console.WriteLine("Задание №5\nПрограмма печатает по шаблону при х = 4: 1 овца ... 2 овца ... 3 овца ... 4 овца ....");
+            Console.WriteLine("Введите целое значение х");
+            int k = int.Parse(Console.ReadLine());
+            string strok = "";
+            int a = 0;
+            while  ( a < k)
+            {
+                a++;
+                strok += Convert.ToString(a) + " овца ... ";
+            }
+            Console.WriteLine(strok);
+            Console.WriteLine("Для продолжения нажмите enter");
+            Console.ReadKey();
+            Console.Clear();
+
+            Console.WriteLine();
         }
     }
 }
