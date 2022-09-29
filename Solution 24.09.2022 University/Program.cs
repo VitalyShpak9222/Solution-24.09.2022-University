@@ -6,6 +6,16 @@ using System.Threading.Tasks;
 
 namespace Solution_24._09._2022_University
 {
+    public enum day
+    {
+        понедельик = 1,
+        вторник = 2,
+        среда = 3,
+        четверг = 4,
+        пятница = 5,
+        суббота = 6,
+        воскресенье = 7
+    }
     class Program
     {
         static void Main(string[] args)
@@ -151,7 +161,28 @@ namespace Solution_24._09._2022_University
                 Console.Clear();
             }
 
-            Console.WriteLine("Задание № 8");
+            Console.WriteLine("Задание № 9\nПрограмма выводит день недели по соответствующему его номеру\nВведите номер дня недели");
+            int mainday = int.Parse(Console.ReadLine());
+            Console.WriteLine(Enum.GetName(typeof(day), mainday));
+            Console.ReadKey();
+            Console.Clear();
+
+            Console.WriteLine("Задание №10\nПрограмма выполняет сортировку массива");
+            int[] mass = { 2, -243, 23242, 242, -2324 };
+            Console.WriteLine("Массив до сортировки");
+            for (int i = 0; i < mass.Length; i++)
+            {
+                Console.WriteLine(mass[i]);
+            }
+            Array.Sort(mass);
+            Console.WriteLine("Массив после сортировки");
+            for (int i = 0; i < mass.Length; i++)
+            {
+                Console.WriteLine(mass[i]);
+            }
+            Console.WriteLine("Для продолжения нажмите enter");
+            Console.ReadKey();
+            Console.Clear();
         }
     }
 }
