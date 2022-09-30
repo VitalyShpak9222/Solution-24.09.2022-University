@@ -25,6 +25,7 @@ namespace Solution_24._09._2022_University
             string st1 = Console.ReadLine();
             Console.WriteLine("Введите ширину окна");
             string st2 = Console.ReadLine();
+            Console.WriteLine("Введите диаметр окружности головы Васи");
             string g = Console.ReadLine();
             if (Math.Min(double.Parse(st1), double.Parse(st2)) - double.Parse(g) >= 2)
             {
@@ -161,6 +162,24 @@ namespace Solution_24._09._2022_University
                 Console.Clear();
             }
 
+            Console.WriteLine("Задание №8\nПрограмма считает количество определенных элементов в массиве");
+            int count_c = 0;
+            string count_el = "";
+            string[] cucl = { "(Hello Kitty)", "(wfdfwdg)", "(efwefwef)", "(Hello Kitty)", "(Hello Kitty)", "(2r2erfewfw)", "(2erwefw)", "(Barbie doll)", "(efw)", "(Barbie doll)", "(weqre11111111)" };
+            foreach (string i in cucl)
+            {
+                count_el += i + " ";
+                if (i == "Hello Kitty" || i == "Barbie doll")
+                {
+                    count_c++;
+                }
+            }
+            Console.WriteLine("Элементы массива:\n" + count_el);
+            Console.WriteLine("В сумке " + count_c + " кукол");
+            Console.WriteLine("Для продолжения нажмите enter");
+            Console.ReadKey();
+            Console.Clear();
+
             Console.WriteLine("Задание № 9\nПрограмма выводит день недели по соответствующему его номеру\nВведите номер дня недели");
             int mainday = int.Parse(Console.ReadLine());
             Console.WriteLine(Enum.GetName(typeof(day), mainday));
@@ -183,6 +202,38 @@ namespace Solution_24._09._2022_University
             Console.WriteLine("Для продолжения нажмите enter");
             Console.ReadKey();
             Console.Clear();
+
+            Console.WriteLine("Заданеи № 11\nПрограмма проверяет стоят ли эелементы массива в порядке возрастания и в случае отрицательного ответа пишет номер первого элемента стоящего не в порядке возрастания");
+            int[] spis = { -34213, -4234, -245, 34, 84, 92, -3, 34, 75, 10 };
+            string at_spis = "";
+            foreach (int i in spis)
+            {
+                at_spis += Convert.ToString(i) + " ";
+            }
+            Console.WriteLine("Массив состоит из элементов " + at_spis);
+            spis.Append(0);
+            for (int i = 0; i < spis.Count() - 1; i++)
+            {
+                if (spis[i] < spis[i + 1])
+                {
+                    continue;
+                }
+                else
+                {
+                    spis[spis.Length - 1] = i + 1;
+                    break;
+                }
+            }
+            if (spis[spis.Length - 1] == 0)
+            {
+                Console.WriteLine("Все элементы массива стоят по возрастанию");
+            }
+            else
+            {
+                Console.WriteLine("Элементы массива возрастают до элемента с индексом " + spis[spis.Length - 1]);
+            }
+            Console.WriteLine("Для завершения нажмите enter");
+            Console.ReadKey();
         }
     }
 }
